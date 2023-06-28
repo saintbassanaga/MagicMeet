@@ -8,17 +8,41 @@
 
 {% block body %}
     {% block header %}
+        <header>
+            <div class="wrapper row">
+                <button class="nav-toggle">
+                    <span class="icon-area"></span>
+                </button>
+                <a class="logo" href="{{ url_for('magicMeet_home') }}">Magic Meeting</a>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="{{ url_for('magicMeet_home') }}">Home</a></li>
+                        <li><a href="{{ url_for('why_section') }}">Why Us</a></li>
+                        <li><a href="{{ url_for('feedback_section') }}">Our FeedBack</a></li>
+                        <li><a href="{{ url_for('about_section') }}">About Us</a></li>
+                        <li><a href="{{ url_for('join_room') }}">Join Meeting</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
     {% endblock %}
-    {% block why_us %}
 
-    {% endblock %}
-    {% block feedback %}
+    <div class="banner">
+        <div class="content">
+        </div>
+    </div>
 
-    {% endblock %}
-    {% block aboutUs %}
-    {% endblock %}
-    {% block footer %}
-    {% endblock %}
+
+
+    <script>
+        const cusMenu = document.querySelector(".nav-toggle");
+        const nav = document.querySelector(".nav");
+
+        cusMenu.addEventListener("click", () => {
+            nav.classList.toggle("openMenu");
+        });
+    </script>
+
 {% endblock %}
 
 </html>
