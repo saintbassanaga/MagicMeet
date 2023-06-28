@@ -1,0 +1,24 @@
+<!DOCTYPE html5>
+<html lang="en">
+
+{% block head %}
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static',filename='images/favicon.ico') }}">
+    {% block title %} {% endblock %}
+{% endblock %}
+
+{% block body %}
+    {% block header %}
+    {% endblock %}
+    {% block why_us %}
+
+    {% endblock %}
+    {% block feedback %}
+
+    {% endblock %}
+    {% block aboutUs %}
+    {% endblock %}
+    {% block footer %}
+    {% endblock %}
+{% endblock %}
+
+</html>
