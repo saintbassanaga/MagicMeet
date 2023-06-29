@@ -1,14 +1,16 @@
 <!DOCTYPE html5>
 <html lang="en">
-
+	<head>
 {% block head %}
-    <link rel="icon" type="image/x-icon" href="{{ url_for('static',filename='images/favicon.ico') }}">
+<link rel="icon" type="image/x-icon" href="{{ url_for('static',filename='images/favicon.ico') }}">
     {% block title %} {% endblock %}
 {% endblock %}
+	</head>
 
+	<body>
 {% block body %}
+<header>
     {% block header %}
-        <header>
             <div class="wrapper row">
                 <button class="nav-toggle">
                     <span class="icon-area"></span>
@@ -24,9 +26,8 @@
                     </ul>
                 </nav>
             </div>
-        </header>
     {% endblock %}
-
+</header>
     <div class="banner">
         <div class="content">
         </div>
@@ -44,5 +45,5 @@
     </script>
 
 {% endblock %}
-
+	</body>
 </html>
