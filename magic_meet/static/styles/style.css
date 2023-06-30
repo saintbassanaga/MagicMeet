@@ -93,6 +93,22 @@ section.active .modal-box {
     margin: 0 10px;
 }
 
+input{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+video{
+    width: 900px;
+    height: 900px;
+    margin:30px;
+}
+
+.modal-box
+{
+    background-color: #4070f4;
+;
+}
 .show-modal{
     margin-left: 35%;
     margin-top: 35%;

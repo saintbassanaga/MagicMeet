@@ -59,7 +59,7 @@ def entry_checkpoint(room_id):
         session[room_id] = {"name": display_name, "mute_audio":mute_audio, "mute_video":mute_video}
         return redirect(url_for("enter_room", room_id=room_id))
 
-    return render_template("chatroom_check.html", room_id=room_id)
+    return render_template("chatroom.html", room_id=room_id)
 
 
 
@@ -125,3 +125,7 @@ def on_data(data):
     if data["type"] != "new-ice-candidate":
         print('{} message from {} to {}'.format(data["type"], sender_sid, target_sid))
     socketio.emit('data', data, room=target_sid)
+
+@app.route('/room_j')
+def room():
+    return render_template('room.html')

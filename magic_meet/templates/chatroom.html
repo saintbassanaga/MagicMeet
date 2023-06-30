@@ -27,11 +27,11 @@
         <div class="modal-box">
             <i class="fa-regular fa-circle-check"></i>
             <h2>Add Your Name</h2>
-            <span>You have successfully downloaded all the source code files.</span>
-            <label for="text" id="text">Username</label><input type="text" name="text" id="text">
+            <span>to join the room</span>
+            <label for="text" id="text">Username</label><input type="text" name="text" id="text" required>
 
             <div class="buttons">
-                <button class="close-btn">Ok, Close</button>
+                <a href="{{ url_for('room') }}"><button class="close-btn" formnovalidate>Ok, Close</button></a>
             </div>
         </div>
     </section>

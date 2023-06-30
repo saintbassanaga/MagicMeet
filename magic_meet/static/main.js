@@ -6,6 +6,7 @@ const section = document.querySelector("section"),
     labelText = document.querySelector("#text");
 function join_room()
 {
+    labelText.textContent= "Room Id"
     showBtn.addEventListener("click", () => section.classList.add("active"));
     closeBtn.addEventListener("click", () =>
         section.classList.remove("active")
@@ -18,7 +19,7 @@ function join_room()
 
 function create_room()
 {
-    labelText.textContent= "Room Id"
+    labelText.textContent= "username"
     overlay.addEventListener("click", () =>
         section.classList.remove("active")
     );
