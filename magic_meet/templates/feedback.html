@@ -1,15 +1,35 @@
-{% extends "index.html" %}
-{% block head %}
-    <title>About Us</title>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Responsive Web layout</title>
+{% extends 'index.html' %}
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static',filename='images/favicon.ico') }}">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="{{ url_for('static',filename='styles/home.css') }}">
-	{% endblock %}
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/home.css') }}">
+    <title>{% block title %}Our feedBack{% endblock %}</title>
+{% endblock %}
+</head>
+<body>
+<header>
+    <div class="wrapper row">
+        <button class="nav-toggle">
+            <span class="icon-area"></span>
+        </button>
+        <a class="logo" href="{{ url_for('magicMeet_home') }}">Magic Meeting</a>
+        <nav class="nav">
+            <ul>
+                <li><a href="{{ url_for('magicMeet_home') }}">Home</a></li>
+                <li><a href="{{ url_for('why_section') }}">Why Us</a></li>
+                <li><a href="{{ url_for('feedback_section') }}">Our FeedBack</a></li>
+                <li><a href="{{ url_for('about_section') }}">About Us</a></li>
+                <li><a href="{{ url_for('join_room') }}">Join Meeting</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
    {% block body %}
    {% block header %}

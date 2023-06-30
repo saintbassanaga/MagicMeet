@@ -1,84 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- icon -->
-{#    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">#}
-{##}
-{#    <!-- socketio -->#}
-{#    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" integrity="sha512-v8ng/uGxkge3d1IJuEo6dJP8JViyvms0cly9pnbfRxT6/31c3dRWxIiwGnMSWwZjHKOuY3EVmijs7k1jz/9bLA==" crossorigin="anonymous"></script>#}
-{##}
-{#    <!-- Latest compiled and minified CSS -->#}
-{#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">#}
-{#    <!-- jQuery library -->#}
-{#    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>#}
-{#    <!-- Popper JS -->#}
-{#    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>#}
-{#    <!-- Latest compiled JavaScript -->#}
-{#    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>#}
-    <link rel="stylesheet" href="{{ url_for('static',filename='styles/bootstrap/bootstrap.min.css') }}">
-    <link rel="icon" type="image/x-icon" href="{{ url_for('static',filename='images/favicon.ico') }}">
-    <!-- google Material icons -->
-{#    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">#}
-
-    <script type="text/javascript">
-        var myRoomID = "{{room_id}}";
-        var myName = "{{display_name}}";
-        var audioMuted = "{{mute_audio}}"==="1";
-        var videoMuted = "{{mute_video}}"==="1";
-        console.log(">> {{mute_audio}}, {{mute_video}}", audioMuted, videoMuted);
-    </script>
-    <script src="{{url_for('static', filename='chatroom_ui.js')}}"></script>
-    <script src="{{url_for('static', filename='chatroom_networking.js')}}"></script>
-
+{% extends 'index.html' %}
+{% block head %}
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Chat [{{room_id}}]</title>
-</head>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static',filename='images/favicon.ico') }}">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+    <script  src="{{ url_for('static',filename='main.js') }}" async > </script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}Meeting Room {% endblock %}</title>
+{% endblock %}
 <body>
+{% block body %}
 
-<div class="heading mb-4">
-    <h1 class="display-4">Magic Meet</h1>
-    <div class="room-info">
-        <h3>Room: <span class="heading-mark">{{room_id}}</span></h3>
-        <h5>You have joined as <span class="heading-mark">{{display_name}}</span></h5>
-        <div>Ask your friends to join using the room id: <span class="heading-mark">{{room_id}}</span></div>
-        <div id="room_link"></div>
-    </div>
-</div>
-
-<div class="container-fluid px-0 mx-0">
-    <div id="video_grid" class="video-grid"></div>
-
-    <div id="control_box" class="row control-box shadow">
-        <div class="col-7 col-md-8 col-lg-9 d-flex justify-content-around align-items-center button-box">
-
-            <button id="btn_mute" class="btn btn-lg btn-outline-secondary rounded-circle">
-                    <span id="mute_icon" class="material-icons pt-2">
-                        mic
-                    </span>
-            </button>
-            <button id="btn_vid_mute"class="btn btn-lg btn-outline-secondary rounded-circle">
-                    <span id="vid_mute_icon" class="material-icons pt-2">
-                        video cam
-                    </span>
-            </button>
-            <button id="btn_share_screen"class="btn btn-lg btn-outline-secondary rounded-circle">
-                    <span id="vid_mute_icon" class="material-icons pt-2">
-                        share screen
-                    </span>
-            </button>
-            <button id="call_end" class="btn btn-lg btn-danger rounded-circle">
-                    <span class="material-icons pt-2">
-                        call_end
-                    </span>
-            </button>
+    {% block header %}
+        <span>
+            <h1 style="margin: 0 25% 0 25%; padding: 0 ;position:relative" >Create or Join a meeting Room</h1>
+        </span>
+    {% endblock %}
+    <section>
+        <div class="show-modal">
+            <button class="show-modal1" onclick="join_room()">Join a Meeting</button>
+            <button class="show-modal2" onclick="create_room()">Create meeting</button>
         </div>
-        <div id="div_local_vid" class="col-5 col-md-4 col-lg-3 video-item ml-auto">
-            <div class="vid-wrapper">
-                <video id="local_vid" autoplay muted></video>
+        <span class="overlay"></span>
+        <div class="modal-box">
+            <i class="fa-regular fa-circle-check"></i>
+            <h2>Add Your Name</h2>
+            <span>You have successfully downloaded all the source code files.</span>
+            <label for="text" id="text">Username</label><input type="text" name="text" id="text">
+
+            <div class="buttons">
+                <button class="close-btn">Ok, Close</button>
             </div>
         </div>
-    </div>
-</div>
+    </section>
+    <script>
+
+    </script>
+
+{% endblock %}
 </body>
-</html>

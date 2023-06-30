@@ -3,7 +3,7 @@
 	<head>
 {% block head %}
 <link rel="icon" type="image/x-icon" href="{{ url_for('static',filename='images/favicon.ico') }}">
-    {% block title %} {% endblock %}
+    <title>{% block title %} {% endblock %}</title>
 {% endblock %}
 	</head>
 
@@ -28,6 +28,7 @@
             </div>
     {% endblock %}
 </header>
+
     <div class="banner">
         <div class="content">
         </div>
