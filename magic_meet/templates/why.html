@@ -1,7 +1,6 @@
-{% extends 'index.html' %}
+{% extends "index.html" %}
 {% block head %}
     <title>Why Us</title>
-    <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,9 +9,11 @@
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{{ url_for('static',filename='styles/home.css') }}">
-    </head>
-    <body>
-    <header>
+	{% endblock %}
+
+   {% block body %}
+   {% block header %}
+
         <div class="wrapper row">
             <button class="nav-toggle">
                 <span class="icon-area"></span>
@@ -28,5 +29,24 @@
                 </ul>
             </nav>
         </div>
-    </header>
-{% endblock %}
+
+	{% endblock %}
+    <section id="why-us">
+    <div class="container">
+      <h1>Why Choose Magic Meet?</h1>
+      <ul>
+        <li>Immersive Virtual Venue: Experience the energy and engagement of in-person conferences with our immersive virtual venue.</li>
+        <li>Interactive Sessions: Engage in real-time discussions, ask questions, and get instant responses through our interactive sessions.</li>
+        <li>Networking Opportunities: Build meaningful connections with like-minded professionals through virtual meeting rooms, breakout sessions, and AI-powered matchmaking.</li>
+        <li>Sponsorship and Exhibitor Engagement: Maximize brand exposure and lead generation with our virtual exhibition booths and sponsor showcases.</li>
+        <li>Seamless User Experience: Enjoy a user-friendly interface, easy navigation, and seamless access to all conference features.</li>
+        <li>Flexible Access: Join conferences from anywhere, at any time, eliminating geographical and scheduling constraints.</li>
+        <li>Cutting-Edge Technology: We leverage the latest technology to provide a secure, reliable, and high-quality conference experience.</li>
+        <li>Future-Proof Solution: Stay ahead of the curve with our innovative platform that adapts to the changing landscape of professional events.</li>
+      </ul>
+    </div>
+  </section>
+    <footer>
+    <p>&copy; 2023 Magic Meet. All rights reserved.</p>
+  </footer>
+    {% endblock %}
