@@ -1,19 +1,20 @@
 {% extends "index.html" %}
 {% block head %}
     <title>About Us</title>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Responsive Web layout</title>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="{{ url_for('static',filename='styles/home.css') }}">
-	{% endblock %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}About Us{% endblock %}</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static',filename='images/favicon.ico') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/home.css')}}">
+{% endblock %}
 
-   {% block body %}
-   {% block header %}
-     
+{% block body %}
+    {% block header %}
+
         <div class="wrapper row">
             <button class="nav-toggle">
                 <span class="icon-area"></span>
@@ -30,24 +31,31 @@
             </nav>
         </div>
 
-	{% endblock %}
-    
-    <section id="about">
-    <div class="container">
-      <h1>About Magic Meet</h1>
-      <p>
-        Magic Meet is an innovative online conference app that aims to revolutionize the way professional events are conducted. Our app provides a comprehensive virtual conference experience, enabling attendees to access high-quality presentations, network with peers, and engage with sponsors and exhibitors – all from the comfort of their own space.
-      </p>
-      <p>
-        At Magic Meet, we are passionate about bringing people together and creating meaningful connections. We believe that geographical boundaries should never limit the opportunities for collaboration and knowledge sharing. With our immersive virtual venue, interactive sessions, and advanced networking features, we are committed to delivering an engaging and seamless experience for our users.
-      </p>
-      <p>
-        We are excited to embark on this journey and redefine the future of professional events. Join us on this exciting adventure, and let's unlock the magic of virtual conferences together!
-      </p>
-    </div>
-<footer>
-    <p>&copy; 2023 Magic Meet. All rights reserved.</p>
-  </footer>
-
-  </section>
     {% endblock %}
+
+    <section id="about">
+        <div class="container">
+            <h1>About Magic Meet</h1>
+            <p>
+                Magic Meet is an innovative online conference app that aims to revolutionize the way professional events
+                are conducted. Our app provides a comprehensive virtual conference experience, enabling attendees to
+                access high-quality presentations, network with peers, and engage with sponsors and exhibitors – all
+                from the comfort of their own space.
+            </p>
+            <p>
+                At Magic Meet, we are passionate about bringing people together and creating meaningful connections. We
+                believe that geographical boundaries should never limit the opportunities for collaboration and
+                knowledge sharing. With our immersive virtual venue, interactive sessions, and advanced networking
+                features, we are committed to delivering an engaging and seamless experience for our users.
+            </p>
+            <p>
+                We are excited to embark on this journey and redefine the future of professional events. Join us on this
+                exciting adventure, and let's unlock the magic of virtual conferences together!
+            </p>
+        </div>
+        <footer>
+            <p>&copy; 2023 Magic Meet. All rights reserved.</p>
+        </footer>
+
+    </section>
+{% endblock %}
