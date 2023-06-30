@@ -31,19 +31,49 @@
     </div>
 </header>
 
-<div class="banner">
-    <div class="content">
+   {% block body %}
+   {% block header %}
+
+        <div class="wrapper row">
+            <button class="nav-toggle">
+                <span class="icon-area"></span>
+            </button>
+            <a class="logo" href="{{ url_for('magicMeet_home') }}">Magic Meeting</a>
+            <nav class="nav">
+                <ul>
+                    <li><a href="{{ url_for('magicMeet_home') }}">Home</a></li>
+                    <li><a href="{{ url_for('why_section') }}">Why Us</a></li>
+                    <li><a href="{{ url_for('feedback_section') }}">Our FeedBack</a></li>
+                    <li><a href="{{ url_for('about_section') }}">About Us</a></li>
+                    <li><a href="{{ url_for('join_room') }}">Join Meeting</a></li>
+                </ul>
+            </nav>
+        </div>
+
+	{% endblock %}
+
+<section id="user-feedback">
+    <div class="container">
+      <h1>User Feedback</h1>
+      <form>
+        <div>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="feedback">Feedback:</label>
+          <textarea id="feedback" name="feedback" required></textarea>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
     </div>
-</div>
+  </section>
 
-
-
-<script>
-    const cusMenu = document.querySelector(".nav-toggle");
-    const nav = document.querySelector(".nav");
-
-    cusMenu.addEventListener("click", () => {
-        nav.classList.toggle("openMenu");
-    });
-</script>
-</body>
+  <footer>
+    <p>&copy; 2023 Magic Meet. All rights reserved.</p>
+  </footer>
+    {% endblock %}
